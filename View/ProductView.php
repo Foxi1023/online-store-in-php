@@ -6,7 +6,7 @@ class ProductView {
         foreach ($products as $product) {
             echo '
             <div class="card">
-            <img src="../resurce/1.png" alt="img">
+            <img src="../img/1.png" alt="img">
                 <div class="discrip">
                 <h2>' . $product["name"] . '</h2>
                 <h5>Цена: ' . $product["price"] . ' руб.</h5>
@@ -33,7 +33,7 @@ class ProductView {
         foreach ($products as $product) {
             echo '
                 <div class="card">
-                    <img src="../resurce/1.png" alt="img">
+                    <img src="../img/1.png" alt="img">
                     <div class="discrip">
                         <h2>' . $product["name"] . '</h2>
                         <h5>Цена: ' . $product["price"] . ' руб.</h5>
