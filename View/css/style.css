@@ -1,0 +1,61 @@
+.forms {
+  display: flex;
+  margin: 10px;
+}
+.forms input {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  background-color: #27262a;
+  color: #afafaf;
+  border: none;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  position: relative;
+  cursor: auto;
+  flex-direction: row;
+}
+
+.card input {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+}
+
+input {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+  background-color: #27262a;
+  color: #afafaf;
+  border: none;
+}
+
+input:hover {
+  color: rgb(239, 239, 239);
+}
+
+img {
+  background-color: #e2e2e2;
+  width: 20%;
+  border-radius: 20px;
+  margin-right: 50px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+main {
+  padding: 10px;
+}

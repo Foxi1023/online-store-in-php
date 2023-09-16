@@ -1,0 +1,83 @@
+img {
+  background-color: #e2e2e2;
+  width: 20%;
+  border-radius: 20px;
+  margin-right: 50px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.card .discrip {
+  display: block;
+}
+
+.card .discrip * {
+  text-align: left;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  position: relative;
+  cursor: auto;
+  flex-direction: row;
+}
+
+.card .buttons {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+}
+
+.card .buttons form * {
+  position: relative;
+}
+
+.card p {
+  margin-bottom: 100px;
+}
+
+.card .discrip form * {
+  margin-left: 5px;
+}
+
+input {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+  background-color: #27262a;
+  color: #afafaf;
+  border: none;
+}
+
+input:hover {
+  color: rgb(239, 239, 239);
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  background-color: #dddcdc;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  padding-right: 80px;
+}
