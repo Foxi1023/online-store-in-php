@@ -13,7 +13,7 @@ class ProductView {
                 <h5>Кол-во: '.$product["count"].' шт.</h5>
                 <p>' . $product["description"] . '</p>
                 <div class="buttons">
-                        <form action="../Model/addingItemsToCart.php" method="post">
+                    <form action="../Model/addingItemsToCart.php" method="post">
                         <input style="display:none;" name="id" value='.$product["id"].'>
                         <input style="display:none;" name="price" value='.$product["price"].'>
                         <input type="number" max="'.$product["count"].'" min="1" name="count" value="1">
