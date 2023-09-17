@@ -37,6 +37,9 @@
                     }
                         ?>" href="../View/basketPage.php">Корзина</a>
                 </li>
+
+                <?php session_start(); if ($_SESSION["user"]): ?>
+
                 <li class="nav-item">
                     <a class="nav-link <?php
                     $url = explode("/", $_SERVER['REQUEST_URI'])[4];
@@ -63,6 +66,9 @@
                     }
                     ?>" href="../View/productChangeForm.php">Редактировать товар</a>
                 </li>
+
+                <?php endif; ?>
+
                 <li class="nav-item">
                     <a class="nav-link <?php
                     $url = explode("/", $_SERVER['REQUEST_URI'])[4];
