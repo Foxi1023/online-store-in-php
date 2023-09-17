@@ -19,77 +19,75 @@
 
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container border-radius=20px">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "index.php") {
-                            echo "active";
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "index.php") {
+                        echo "active";
+                    }
+                        ?>" aria-current="page" href="../View/index.php">Гл.Страница</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "basketPage.php") {
+                        echo "active";
+                    }
+                        ?>" href="../View/basketPage.php">Корзина</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "productRemovalForm.php") {
+                        echo "active";
+                    }
+                    ?>" href="../View/productRemovalForm.php">Удалить
+                        товар</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "addingAProductForm.php") {
+                        echo "active";
+                    }
+                    ?>" href="../View/addingAProductForm.php">Добавить
+                        товар</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "productChangeForm.php") {
+                        echo "active";
+                    }
+                    ?>" href="../View/productChangeForm.php">Редактировать товар</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php
+                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
+                    if ($url == "loginForm.php" || $url == "registrationForm.php") {
+                        echo "active";
+                    }
+                        ?>" href="                            <?php
+                        session_start();
+                        if ($_SESSION["user"]) {
+                            echo "../Model/logout.php";
+                        } else {
+                            echo "../View/loginForm.php";
                         }
-                            ?>" aria-current="page" href="../View/index.php">Гл.Страница</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "basketPage.php") {
-                            echo "active";
+                        ?>">
+                        <?php
+                        session_start();
+                        if ($_SESSION["user"]) {
+                            echo "Выйти";
+                        } else {
+                            echo "Вход/Регистрация";
                         }
-                            ?>" href="../View/basketPage.php">Корзина</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "productRemovalForm.php") {
-                            echo "active";
-                        }
-                        ?>" href="../View/productRemovalForm.php">Удалить
-                            товар</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "addingAProductForm.php") {
-                            echo "active";
-                        }
-                        ?>" href="../View/addingAProductForm.php">Добавить
-                            товар</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "productChangeForm.php") {
-                            echo "active";
-                        }
-                        ?>" href="../View/productChangeForm.php">Редактировать товар</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php
-                        $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                        if ($url == "loginForm.php" || $url == "registrationForm.php") {
-                            echo "active";
-                        }
-                            ?>" href="                            <?php
-                            session_start();
-                            if ($_SESSION["user"]) {
-                                echo "../Model/logout.php";
-                            } else {
-                                echo "../View/loginForm.php";
-                            }
-                            ?>">
-                            <?php
-                            session_start();
-                            if ($_SESSION["user"]) {
-                                echo "Выйти";
-                            } else {
-                                echo "Вход/Регистрация";
-                            }
-                            ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        ?>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 </body>

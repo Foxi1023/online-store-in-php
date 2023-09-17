@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($index !== false) {
         $removedProduct = $_SESSION["productsBasket"][$index];
         $_SESSION["allPrice"] -= $removedProduct['price'] * $removedProduct['count'];
+        $_SESSION["allCount"] -= $removedProduct['count'];
         array_splice($_SESSION["productsBasket"], $index, 1); // Удаляем один элемент
     }
 }

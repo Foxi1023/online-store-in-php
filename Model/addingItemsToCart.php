@@ -23,6 +23,7 @@ function addProduct($id, $name, $price, $count) {
         'count' => $count,
     ];
     $_SESSION["allPrice"]+= $price * $count;
+    $_SESSION["allCount"]+= $count;
     
     $index = array_search($id, array_column($_SESSION["productsBasket"], 'id'));
 
