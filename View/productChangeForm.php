@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../View/css/styleRe.css">
 
 <body>
-    <form action="../View/updateProduct.php" method="post">
+    <form action="../Model/productСhange.php" method="post">
         <h2>Редактирование товара</h2>
         <label for="id">Введите id товара: </label>
         <input type="number" name="id" value="1">

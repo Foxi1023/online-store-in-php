@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../View/css/styleRe.css">
 
 <body>
-    <form action="../Controller/chekingProduct.php" method="post">
+    <form action="../Model/addingAProduct.php" method="post">
         <h2>Создание товара</h2>
         <label for="name">Введите название: </label>
         <input type="text" name="name" value="">
