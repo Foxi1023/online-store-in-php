@@ -1,4 +1,12 @@
-<?php include_once("Template/header.php") ?>
+<?php include_once("Template/header.php");
+
+session_start();
+
+if (!$_SESSION["user"]) {
+    header('Location: ../View/index.php');
+}
+
+?>
 
 <link rel="stylesheet" href="../View/css/styleRe.css">
 
