@@ -12,13 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controller = new ProductController($model, $view);
     
     // Добавление продукта в корзину
-    function addProduct($id, $name, $price, $count) {
+    function addProduct($id, $name, $price, $count,$img) {
         if (isset($_SESSION["productsBasket"])) {
             $product = [
                 'id' => $id,
                 'name' => $name,
                 'price' => $price,
                 'count' => $count,
+                'img' => $img
             ];
             
             $_SESSION["allPrice"]+= $price * $count;
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
     
-    addProduct($_POST["id"],$_POST["name"],$_POST["price"],$_POST["count"]);
+    addProduct($_POST["id"],$_POST["name"],$_POST["price"],$_POST["count"],$_POST["img"]);
 } else {
     echo "error";
 }

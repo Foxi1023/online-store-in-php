@@ -10,8 +10,8 @@ class ProductController {
     }
 
     // Добавление товара
-    public function addProduct($name, $price, $description, $count) {
-        $this->model->addProduct($name, $price, $description, $count);
+    public function addProduct($name, $price, $description, $count, $img) {
+        $this->model->addProduct($name, $price, $description, $count, $img);
     }
 
     // Удаление товара
@@ -19,8 +19,8 @@ class ProductController {
         $this->model->removeProduct($id);
     }
     // Изменение товара
-    public function UpdateProduct($id,$name, $price, $description, $count) {
-        $this->model->UpdateProduct($id,$name, $price, $description, $count);
+    public function UpdateProduct($id,$name, $price, $description, $count, $img) {
+        $this->model->UpdateProduct($id,$name, $price, $description, $count, $img);
     }
 
     // Получение списока продуктов

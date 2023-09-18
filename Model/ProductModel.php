@@ -1,14 +1,8 @@
 <?php
+include "../Model/MysqlConn.php";
 
-
-class ProductModel {
-    private $user = 'root';
-    private $password = 'root';
-    private $db = 'maker';
-    private $host = 'localhost';
-    private $port = 3306;
-    private $link;
-    
+class ProductModel extends Mysql {
+        
     // Подключение к db
     public function __construct() {
         $this->link = new mysqli($this->host, $this->user, $this->password, $this->db, $this->port);
@@ -26,7 +20,7 @@ class ProductModel {
     }
 
     // Изменение товара
-    public function UpdateProduct($id, $name, $price, $description, $count) {
+    public function UpdateProduct($id, $name, $price, $description, $count, $img) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
         $query = "UPDATE `products` 
             SET 
@@ -34,14 +28,16 @@ class ProductModel {
                 `price` = ?,
                 `description` = ?,
                 `rating` = ?,
-                `count` = ?
+                `count` = ?,
+                `img` = ?
             WHERE 
                 `id` = ?";
         $stmt = $this->link->prepare($query);
         $rating = 0;
-        $stmt->bind_param('sdssdi', $name, $price, $description, $rating, $count, $id);
+        $stmt->bind_param('sdssdii', $name, $price, $description, $rating, $count, $img, $id);
         $stmt->execute();
     }
+    
     // Получение товара по id
     public function getProductById($id) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
@@ -54,11 +50,11 @@ class ProductModel {
     }
 
     // Добавление товара
-    public function addProduct($name, $price, $description, $count) {
+    public function addProduct($name, $price, $description, $count, $img) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "INSERT INTO `products`(`name`, `price`, `description`, `rating`, `count`) VALUES (?, ?, ?, '0', ?);";
+        $query = "INSERT INTO `products`(`name`, `price`, `description`, `rating`, `count`, `img`) VALUES (?, ?, ?, '0', ?, ?);";
         $stmt = $this->link->prepare($query);
-        $stmt->bind_param('sdsd', $name, $price, $description, $count);
+        $stmt->bind_param('sdsds', $name, $price, $description, $count,$img);
         $stmt->execute();
     }
 
