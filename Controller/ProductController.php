@@ -43,7 +43,8 @@ class ProductController {
 
     // Получение продукта
     public function viewProductPage($productId) {
-        $this->view->DisplayProductPage($productId);
+        $product = $this->model->getProductById($productId);
+        $this->view->DisplayProductPage($product);
     }
 }
 

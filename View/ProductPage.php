@@ -14,5 +14,5 @@ $model = new ProductModel();
 $view = new ProductView(); 
 $controller = new ProductController($model, $view);
 
-$controller->viewProduct($_POST["id"]);
+$controller->viewProductPage($_POST["id"]);
 ?>

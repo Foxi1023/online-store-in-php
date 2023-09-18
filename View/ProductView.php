@@ -56,12 +56,13 @@ class ProductView {
         foreach ($products as $product) {
             echo '
             <div class="card">
-            <img src="../resurce/'.$product["img"].'.png" alt="img">
+            <img src="../img/'.$product["img"].'.png" alt="img">
                 <div class="discrip">
                 <form action="../Model/addingItemsToCart.php" method="post">
                     <h2>' . $product["name"] . '</h2>
                     <h5>Цена: ' . $product["price"] . ' руб.</h5>
                     <h5>Кол-во: '.$product["count"].' шт.</h5>
+                    <p>Описание</p>
                     <p>' . $product["description"] . '</p>
                     <div class="buttons">
                         <input style="display:none;" name="id" value='.$product["id"].'>
