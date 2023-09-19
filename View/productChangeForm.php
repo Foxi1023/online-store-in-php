@@ -14,15 +14,15 @@ if (!$_SESSION["user"]) {
     <form action="../Model/productСhange.php" method="post" enctype="multipart/form-data">
         <h2>Редактирование товара</h2>
         <label for="id">Введите id товара: </label>
-        <input type="number" name="id" value="1" required>
+        <input type="number" name="id" value="1">
         <label for="name">Введите название: </label>
-        <input type="text" name="name" value="" required>
+        <input type="text" name="name" value="">
         <label for="description">Введите описание: </label>
-        <input type="text" name="description" value="" required>
+        <input type="text" name="description" value="">
         <label for="price">Введите стоимость: </label>
-        <input type="number" name="price" value="" required>
+        <input type="number" name="price" value="">
         <label for="count">Введите кол-во: </label>
-        <input type="number" name="count" value="" required>
+        <input type="number" name="count" value="">
         <label for="uploadfile">Вставте изображение товара: </label>
         <input type="file" name="uploadfile">
         <input type="submit" value="Обновить">
