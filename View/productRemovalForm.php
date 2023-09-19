@@ -1,4 +1,5 @@
-<?php include_once("Template/header.php");
+<?php 
+include_once("Template/header.php");
 
 if(session_status() === PHP_SESSION_NONE) session_start();
 

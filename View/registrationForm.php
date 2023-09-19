@@ -1,4 +1,5 @@
-<?php include_once("Template/header.php") ?>
+<?php 
+include_once("Template/header.php") ?>
 <link rel="stylesheet" href="../View/css/styleRe.css">
 
 <body>
