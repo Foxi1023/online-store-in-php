@@ -28,6 +28,5 @@ $controller = new ProductController($model, $view);
         <?php
             $controller->viewProductsInCart($_SESSION["goodsBasket"]);
         ?>
-
     </main>
 </body>

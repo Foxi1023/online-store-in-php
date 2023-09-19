@@ -14,15 +14,15 @@ class ProductView {
                 <p>' . $product["description"] . '</p>
                 <div class="buttons">
                     <form action="../Model/addingItemsToCart.php" method="post" enctype="multipart/form-data">
-                        <input style="display:none;" name="id" value='.$product["id"].'>
-                        <input style="display:none;" name="img" value='.$product["img"].'>
-                        <input style="display:none;" name="price" value='.$product["price"].'>
-                        <input style="display:none;" name="name" value='.$product["name"].'>
+                        <input style="display:none;" name="id" value="'.$product["id"].'">
+                        <input style="display:none;" name="img" value="'.$product["img"].'">
+                        <input style="display:none;" name="price" value="'.$product["price"].'">
+                        <input style="display:none;" name="name" value="'.htmlentities($product["name"]).'">
                         <input type="number" max="'.$product["count"].'" min="1" name="count" value="1">
                         <input type="submit" value="В корзину">
                     </form>
                     <form action="../View/ProductPage.php" method="post">
-                        <input style="display:none;" name="id" value='.$product["id"].'>
+                        <input style="display:none;" name="id" value="'.$product["id"].'">
                         <input type="submit" value="Подробнее">
                     </form>
                     </div>
@@ -42,7 +42,7 @@ class ProductView {
                         <h5>Кол-во: '.$product["count"].' шт.</h5>
                         <div class="buttons">
                             <form action="../Model/removeItemFromCart.php" method="post">
-                                <input style="display:none;" name="delid" value='.$product["id"].'>
+                                <input style="display:none;" name="delid" value="'.$product["id"].'">
                                 <input type="submit" value="удалить">
                             </form>
                         </div>
@@ -65,8 +65,10 @@ class ProductView {
                     <p>Описание</p>
                     <p>' . $product["description"] . '</p>
                     <div class="buttons">
-                        <input style="display:none;" name="id" value='.$product["id"].'>
-                        <input style="display:none;" name="price" value='.$product["price"].'>
+                        <input style="display:none;" name="img" value="'.$product["img"].'">
+                        <input style="display:none;" name="name" value="'.htmlentities($product["name"]).'">
+                        <input style="display:none;" name="id" value="'.$product["id"].'">
+                        <input style="display:none;" name="price" value="'.$product["price"].'">
                         <input type="number" max="'.$product["count"].'" min="1" name="count" value="1">
                         <input type="submit" value="В корзину">
                     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="кг">
 
 <head>
     <meta charset="UTF-8" />
@@ -16,36 +16,34 @@
     </script>
 
 </head>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../View/index.php">Гл.Страница</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../View/basketPage.php">Корзина</a>
+            </li>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../View/index.php">Гл.Страница</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../View/basketPage.php">Корзина</a>
-                </li>
+            <?php if(session_status() === PHP_SESSION_NONE) session_start(); if (isset($_SESSION["user"])): ?>
 
-                <?php if(session_status() === PHP_SESSION_NONE) session_start(); if (isset($_SESSION["user"])): ?>
+            <li class="nav-item">
+                <a class="nav-link" href="../View/productRemovalForm.php">Удалить
+                    товар</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../View/addingAProductForm.php">Добавить
+                    товар</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../View/productChangeForm.php">Редактировать товар</a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../View/productRemovalForm.php">Удалить
-                        товар</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../View/addingAProductForm.php">Добавить
-                        товар</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../View/productChangeForm.php">Редактировать товар</a>
-                </li>
+            <?php endif; ?>
 
-                <?php endif; ?>
-
-                <li class="nav-item">
-                    <a class="nav-link" href=" <?php
+            <li class="nav-item">
+                <a class="nav-link" href=" <?php
                         if(session_status() === PHP_SESSION_NONE) session_start();
                         if ($_SESSION["user"]) {
                             echo "../Model/logout.php";
@@ -53,7 +51,7 @@
                             echo "../View/loginForm.php";
                         }
                         ?>">
-                        <?php
+                    <?php
                         if(session_status() === PHP_SESSION_NONE) session_start();
                         if ($_SESSION["user"]) {
                             echo "Выйти";
@@ -61,9 +59,8 @@
                             echo "Вход/Регистрация";
                         }
                         ?>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</body>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
