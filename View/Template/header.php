@@ -29,12 +29,10 @@
             <?php if(session_status() === PHP_SESSION_NONE) session_start(); if (isset($_SESSION["user"])): ?>
 
             <li class="nav-item">
-                <a class="nav-link" href="../View/productRemovalForm.php">Удалить
-                    товар</a>
+                <a class="nav-link" href="../View/productRemovalForm.php">Удалить товар</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../View/addingAProductForm.php">Добавить
-                    товар</a>
+                <a class="nav-link" href="../View/addingAProductForm.php">Добавить товар</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../View/productChangeForm.php">Редактировать товар</a>
