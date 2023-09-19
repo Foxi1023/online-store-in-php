@@ -1,4 +1,4 @@
-<?
+<?php
 class Mysql {
     protected $user = 'root';
     protected $password = 'root';

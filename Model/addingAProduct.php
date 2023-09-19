@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        exit();
     }
     
-    //тестирую введенные данные
+/*     //тестирую введенные данные
     echo $_FILES['uploadfile']['name'];
     echo "<br>";
     echo $_FILES['uploadfile']['tmp_name'];
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "count ".$_POST["count"];
     echo "<br>";
     echo "count = ".$count;
-    echo "<br>";
+    echo "<br>"; */
     
     
     

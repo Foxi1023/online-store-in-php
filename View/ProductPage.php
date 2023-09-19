@@ -8,8 +8,6 @@ require_once "../View/ProductView.php";
 
 if(session_status() === PHP_SESSION_NONE) session_start();
 
-
-
 $model = new ProductModel();
 $view = new ProductView(); 
 $controller = new ProductController($model, $view);
