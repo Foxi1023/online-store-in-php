@@ -28,7 +28,7 @@
                     <a class="nav-link" href="../View/basketPage.php">Корзина</a>
                 </li>
 
-                <?php session_start(); if ($_SESSION["user"]): ?>
+                <?php if(session_status() === PHP_SESSION_NONE) session_start(); if ($_SESSION["user"]): ?>
 
                 <li class="nav-item">
                     <a class="nav-link" href="../View/productRemovalForm.php">Удалить
