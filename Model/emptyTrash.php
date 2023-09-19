@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     $_SESSION["productsBasket"] = [];
-    $_SESSION["allPrice"] = 0;
+    $_SESSION["allGoods"] = 0;
     $_SESSION["allCount"] = 0;
 }
 

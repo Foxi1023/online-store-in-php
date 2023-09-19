@@ -23,7 +23,7 @@ $controller = new ProductController($model, $view);
                 <input type="submit" value="Потвердить покупку">
             </form>
         </div>
-        <h2>Общая стоимость: <?php echo $_SESSION["allPrice"];?></h2>
+        <h2>Общая стоимость: <?php echo $_SESSION["allGoods"];?></h2>
         <h2>Всего товаров: <?php echo count($_SESSION["productsBasket"]);?></h2>
         <?php
             $controller->viewProductsInCart($_SESSION["productsBasket"]);
