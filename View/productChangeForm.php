@@ -1,6 +1,6 @@
 <?php include_once("Template/header.php");
 
-session_start();
+if(session_status() === PHP_SESSION_NONE) session_start();
 
 if (!$_SESSION["user"]) {
     header('Location: ../View/index.php');

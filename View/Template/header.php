@@ -22,61 +22,31 @@
         <div class="container">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "index.php") {
-                        echo "active";
-                    }
-                        ?>" aria-current="page" href="../View/index.php">Гл.Страница</a>
+                    <a class="nav-link" aria-current="page" href="../View/index.php">Гл.Страница</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "basketPage.php") {
-                        echo "active";
-                    }
-                        ?>" href="../View/basketPage.php">Корзина</a>
+                    <a class="nav-link" href="../View/basketPage.php">Корзина</a>
                 </li>
 
                 <?php session_start(); if ($_SESSION["user"]): ?>
 
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "productRemovalForm.php") {
-                        echo "active";
-                    }
-                    ?>" href="../View/productRemovalForm.php">Удалить
+                    <a class="nav-link" href="../View/productRemovalForm.php">Удалить
                         товар</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "addingAProductForm.php") {
-                        echo "active";
-                    }
-                    ?>" href="../View/addingAProductForm.php">Добавить
+                    <a class="nav-link" href="../View/addingAProductForm.php">Добавить
                         товар</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "productChangeForm.php") {
-                        echo "active";
-                    }
-                    ?>" href="../View/productChangeForm.php">Редактировать товар</a>
+                    <a class="nav-link" href="../View/productChangeForm.php">Редактировать товар</a>
                 </li>
 
                 <?php endif; ?>
 
                 <li class="nav-item">
-                    <a class="nav-link <?php
-                    $url = explode("/", $_SERVER['REQUEST_URI'])[4];
-                    if ($url == "loginForm.php" || $url == "registrationForm.php") {
-                        echo "active";
-                    }
-                        ?>" href="                            <?php
-                        session_start();
+                    <a class="nav-link" href=" <?php
+                        if(session_status() === PHP_SESSION_NONE) session_start();
                         if ($_SESSION["user"]) {
                             echo "../Model/logout.php";
                         } else {
@@ -84,7 +54,7 @@
                         }
                         ?>">
                         <?php
-                        session_start();
+                        if(session_status() === PHP_SESSION_NONE) session_start();
                         if ($_SESSION["user"]) {
                             echo "Выйти";
                         } else {
