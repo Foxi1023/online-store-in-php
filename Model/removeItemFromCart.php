@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     
     $id = $_POST["delid"];
-    $index = array_search($id, array_column($_SESSION["productsBasket"], 'id'));
+    $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
 
     if ($index !== false) {
-        $removedProduct = $_SESSION["productsBasket"][$index];
-        $_SESSION["allPrice"] -= $removedProduct['price'] * $removedProduct['count'];
-        array_splice($_SESSION["productsBasket"], $index, 1); // Удаляем один элемент
+        $removedProduct = $_SESSION["goodsBasket"][$index];
+        $_SESSION["allGoods"] -= $removedProduct['price'] * $removedProduct['count'];
+        array_splice($_SESSION["goodsBasket"], $index, 1); // Удаляем один элемент
     }
 }
 

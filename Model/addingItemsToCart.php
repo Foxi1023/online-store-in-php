@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Добавление продукта в корзину
     function addProduct($id, $name, $price, $count,$img) {
-        if (isset($_SESSION["productsBasket"])) {
+        if (isset($_SESSION["goodsBasket"])) {
             $product = [
                 'id' => $id,
                 'name' => $name,
@@ -23,17 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'img' => $img
             ];
             
-            $_SESSION["allPrice"]+= $price * $count;
+            $_SESSION["allGoods"]+= $price * $count;
 
-            $index = array_search($id, array_column($_SESSION["productsBasket"], 'id'));
+            $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
             
             if ($index !== false) {
-                $_SESSION["productsBasket"][$index] = $product;
+                $_SESSION["goodsBasket"][$index] = $product;
             } else {
-                $_SESSION["productsBasket"][] = $product;
+                $_SESSION["goodsBasket"][] = $product;
             }
         } else {
-            $_SESSION["productsBasket"] = [];
+            $_SESSION["goodsBasket"] = [];
             $_SESSION["allGoods"] = 0;
             $_SESSION["allCount"] = 0;
         }

@@ -24,9 +24,9 @@ $controller = new ProductController($model, $view);
             </form>
         </div>
         <h2>Общая стоимость: <?php echo $_SESSION["allGoods"];?></h2>
-        <h2>Всего товаров: <?php echo count($_SESSION["productsBasket"]);?></h2>
+        <h2>Всего товаров: <?php echo count($_SESSION["goodsBasket"]);?></h2>
         <?php
-            $controller->viewProductsInCart($_SESSION["productsBasket"]);
+            $controller->viewProductsInCart($_SESSION["goodsBasket"]);
         ?>
 
     </main>

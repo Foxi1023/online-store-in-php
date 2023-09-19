@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(session_status() === PHP_SESSION_NONE) session_start();
 
     
-    $_SESSION["productsBasket"] = [];
+    $_SESSION["goodsBasket"] = [];
     $_SESSION["allGoods"] = 0;
     $_SESSION["allCount"] = 0;
 }
