@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `products`
+-- Структура таблицы `product`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `product` (
   `id` int(16) NOT NULL,
   `name` varchar(64) NOT NULL,
   `img` int(16) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `products`
+-- Дамп данных таблицы `product`
 --
 
-INSERT INTO `products` (`id`, `name`, `img`, `price`, `description`, `rating`, `count`) VALUES
+INSERT INTO `product` (`id`, `name`, `img`, `price`, `description`, `rating`, `count`) VALUES
 (6, 'TECNO Смартфон Camon 20 8+256 Гб', 1, 12000, 'Смартфон TECNO Camon 20 дарит новые возможности для фото и видеосъемки. Основная камера 64 Мп с продвинутым модулем RGBW Pro создает превосходные фотографии в темное время суток, а еще помогает снимать яркие видео в высоком разрешении. Фронтальная камера 32 Мп', 4, 10),
 (7, 'iPhone Смартфон iPhone XR 64GB', 2, 26000, 'Чехол и бронестекло в подарок при заказе сегодня! Apple Айфон iPhone XR 64GB. Только оригинальная продукция Apple. Юридическая чистота. Приобретая у нас, Вы обезопасите себя от мошенников, продающих не оригинальную технику, краденные телефоны, и получите дополнительную гарантию', 5, 1),
 (8, 'INOI Смартфон A72 4/128 GB NFC Space Gray', 3, 7400, 'Смартфон Inoi А170 Black обладает оперативной памятью объемом 4 Гб и встроенным хранилищем емкостью 128 Гб. За производительность отвечает четырехъядерный процессор Unisoc Tiger T310. Корпус выполнен из пластика.', 2, 0),
@@ -53,9 +53,9 @@ INSERT INTO `products` (`id`, `name`, `img`, `price`, `description`, `rating`, `
 --
 
 --
--- Индексы таблицы `products`
+-- Индексы таблицы `product`
 --
-ALTER TABLE `products`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -63,9 +63,9 @@ ALTER TABLE `products`
 --
 
 --
--- AUTO_INCREMENT для таблицы `products`
+-- AUTO_INCREMENT для таблицы `product`
 --
-ALTER TABLE `products`
+ALTER TABLE `product`
   MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 

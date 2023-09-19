@@ -14,7 +14,7 @@ class ProductModel extends Mysql {
 
     // Получение всех товаров 
     public function getAllProducts() {
-        $query = 'SELECT * FROM products';
+        $query = 'SELECT * FROM product';
         $res = $this->link->query($query);
         return $res;
     }
@@ -22,7 +22,7 @@ class ProductModel extends Mysql {
     // Изменение товара
     public function UpdateProduct($id, $name, $price, $description, $count, $img) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "UPDATE `products` 
+        $query = "UPDATE `product` 
             SET 
                 `name` = ?,
                 `price` = ?,
@@ -41,7 +41,7 @@ class ProductModel extends Mysql {
     // Получение товара по id
     public function getProductById($id) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "SELECT * FROM products WHERE id = ?";
+        $query = "SELECT * FROM product WHERE id = ?";
         $stmt = $this->link->prepare($query);
         $stmt->bind_param('i', $id);
         $stmt->execute();
@@ -52,7 +52,7 @@ class ProductModel extends Mysql {
     // Добавление товара
     public function addProduct($name, $price, $description, $count, $img) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "INSERT INTO `products`(`name`, `price`, `description`, `rating`, `count`, `img`) VALUES (?, ?, ?, '0', ?, ?);";
+        $query = "INSERT INTO `product`(`name`, `price`, `description`, `rating`, `count`, `img`) VALUES (?, ?, ?, '0', ?, ?);";
         $stmt = $this->link->prepare($query);
         $stmt->bind_param('sdsds', $name, $price, $description, $count,$img);
         $stmt->execute();
@@ -61,7 +61,7 @@ class ProductModel extends Mysql {
     // Удаление товара
     public function removeProduct($id) {
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "DELETE FROM products WHERE id = ?";
+        $query = "DELETE FROM product WHERE id = ?";
         $stmt = $this->link->prepare($query);
         $stmt->bind_param('i', $id);
         $stmt->execute();
@@ -72,7 +72,7 @@ class ProductModel extends Mysql {
         $placeholders = implode(',', array_fill(0, count($ids), '?'));
         
         // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "SELECT * FROM products WHERE id IN ($placeholders)";
+        $query = "SELECT * FROM product WHERE id IN ($placeholders)";
 
         $stmt = $this->link->prepare($query);
     

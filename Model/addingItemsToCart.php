@@ -28,6 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
             
             if ($index !== false) {
+                $count_old = $_SESSION["goodsBasket"][$index]["count"];
+                $product["count"] += $count_old;
                 $_SESSION["goodsBasket"][$index] = $product;
             } else {
                 $_SESSION["goodsBasket"][] = $product;
