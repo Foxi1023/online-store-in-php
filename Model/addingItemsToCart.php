@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ];
             
             $_SESSION["allGoods"]+= $price * $count;
-            
+
             $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
             
             if ($index !== false) {
@@ -37,12 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $_SESSION["goodsBasket"] = [];
             $_SESSION["allGoods"] = 0;
-            $_SESSION["allCount"] = 0;
         }
         
     }
     
-    addProduct($_POST["id"],$_POST["name"],$_POST["price"],$_POST["count"], $_POST["img"]);
+    addProduct($_POST["id"], $_POST["name"], $_POST["price"], $_POST["count"], $_POST["img"]);
 }
 
 header('Location: ../View/index.php');

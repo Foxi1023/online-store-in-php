@@ -85,14 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Получение данных из формы
     $name = $_POST["name"];
+    $id = $_POST["id"];
     $description = $_POST["description"];
     $img = $_POST["img"];
     $price = $_POST["price"];
     $count = $_POST["count"];
     
     //добавляем продукт
-    $controller->addProduct($name, $price, $description, $count, $pathImg);
-    
+    $controller->UpdateProduct($id, $name, $price, $description, $count, $pathImg);
 }
 
 //возвращяю пользователя на гл.страницу

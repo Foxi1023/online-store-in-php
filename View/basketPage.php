@@ -19,7 +19,7 @@ $controller = new ProductController($model, $view);
             <form action="../Model/emptyTrash.php" method="post">
                 <input type="submit" value="Очистить">
             </form>
-            <form action="../Model/emptyTrash.php" method="post">
+            <form action="../Model/productPurchase.php" method="post">
                 <input type="submit" value="Потвердить покупку">
             </form>
         </div>
