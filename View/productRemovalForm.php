@@ -14,7 +14,7 @@ if (!$_SESSION["user"]) {
     <form action="../Model/productRemoval.php" method="post">
         <h2>удалить товар</h2>
         <label for="id">Введите id товара: </label>
-        <input type="number" name="id" value="1">
+        <input type="number" name="id" value="1" required>
         <input type="submit" value="Удалить">
     </form>
 </body>

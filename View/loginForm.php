@@ -6,9 +6,9 @@ include_once("Template/header.php") ?>
     <form action="../Model/checkRegistration.php" method="post">
         <h2>Вход</h2>
         <label for="login">Введите email: </label>
-        <input type="text" name="login" value="">
+        <input type="text" name="login" value="" required>
         <label for="password">Введите пароль: </label>
-        <input type="text" name="password" value="">
+        <input type="text" name="password" value="" required>
         <input type="submit" value="Войти">
         <p><a href="../View/registrationForm.php">нет аккаунта?</a></p>
     </form>
