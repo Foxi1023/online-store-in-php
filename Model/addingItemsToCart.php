@@ -25,18 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ];
             
             $_SESSION["allGoods"]+= $price * $count;
-
+            
             $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
             
             if ($index !== false) {
                 $count_old = $_SESSION["goodsBasket"][$index]["count"];
-                if ($total > $count_old) {
-                    $product["count"] += $count_old;
-                    $_SESSION["goodsBasket"][$index] = $product;
-                } else {
-                    $product["count"] = $total;
-                    $_SESSION["goodsBasket"][$index] = $product;
-                }
+                $product["count"] += $count_old;
+                $_SESSION["goodsBasket"][$index] = $product;
+
+                $product["count"] = $total;
+                $_SESSION["goodsBasket"][$index] = $product;
+
             } else {
                 $_SESSION["goodsBasket"][] = $product;
             }
