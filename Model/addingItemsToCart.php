@@ -13,13 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     
     // Добавление продукта в корзину
-    function addProduct($id, $name, $price, $count,$img) {
+    function addProduct($id, $name, $price, $count, $total, $img) {
         if (isset($_SESSION["goodsBasket"])) {
             $product = [
                 'id' => $id,
                 'name' => $name,
                 'price' => $price,
                 'count' => $count,
+                'total' => $total,
                 'img' => $img
             ];
             
@@ -29,8 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             if ($index !== false) {
                 $count_old = $_SESSION["goodsBasket"][$index]["count"];
-                $product["count"] += $count_old;
-                $_SESSION["goodsBasket"][$index] = $product;
+                if ($total > $count_old) {
+                    $product["count"] += $count_old;
+                    $_SESSION["goodsBasket"][$index] = $product;
+                } else {
+                    $product["count"] = $total;
+                    $_SESSION["goodsBasket"][$index] = $product;
+                }
             } else {
                 $_SESSION["goodsBasket"][] = $product;
             }
@@ -42,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
     
-    addProduct($_POST["id"],$_POST["name"],$_POST["price"],$_POST["count"],$_POST["img"]);
+    addProduct($_POST["id"],$_POST["name"],$_POST["price"],$_POST["count"],$_POST["total"],$_POST["img"]);
 }
 
 header('Location: ../View/index.php');
