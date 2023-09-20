@@ -9,6 +9,13 @@ $controller = new ProductController($model, $view);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
+    // Получение данных из формы
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $img = $_POST["img"];
+    $price = $_POST["price"];
+    $count = $_POST["count"];
+
     //создаем путь
     $file4 = "../img/count.txt";
     
@@ -38,6 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //проверки
     if ($mime != "png") {
         echo "incorrect image extension";
+        echo "<br>";
+        exit();
+    }
+    if (isset($price)) {
+        echo "value cannot be negative";
+        echo "<br>";
+        exit();
+    }
+    if (isset($count)) {
+        echo "value cannot be negative";
         echo "<br>";
         exit();
     }
@@ -81,21 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "count = ".$count;
     echo "<br>"; */
     
-    
-    
-    // Получение данных из формы
-    $name = $_POST["name"];
-    $description = $_POST["description"];
-    $img = $_POST["img"];
-    $price = $_POST["price"];
-    $count = $_POST["count"];
-    
     //добавляем продукт
     $controller->addProduct($name, $price, $description, $count, $pathImg);
     
 }
 
 //возвращяю пользователя на гл.страницу
-/* header('Location: ../View/index.php'); */
+header('Location: ../View/index.php');
 
 ?>
