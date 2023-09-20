@@ -43,7 +43,7 @@
             <li class="nav-item">
                 <a class="nav-link" href=" <?php
                         if(session_status() === PHP_SESSION_NONE) session_start();
-                        if ($_SESSION["user"]) {
+                        if (isset($_SESSION["user"])) {
                             echo "../Model/logout.php";
                         } else {
                             echo "../View/loginForm.php";
@@ -51,7 +51,7 @@
                         ?>">
                     <?php
                         if(session_status() === PHP_SESSION_NONE) session_start();
-                        if ($_SESSION["user"]) {
+                        if (isset($_SESSION["user"])) {
                             echo "Выйти";
                         } else {
                             echo "Вход/Регистрация";
