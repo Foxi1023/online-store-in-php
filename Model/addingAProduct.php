@@ -24,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     file_put_contents($file4,$pathImg);
     
+    preg_match('/(.+)?\.(.+)?$/', $_FILES['uploadfile']['name'], $output); 
+    $mime = $output[2];
+    echo $mime;
+    echo "<br>";
+    
     //получаем картинку
     $uploadedFile = $_FILES['uploadfile']['tmp_name'];
     
@@ -31,6 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $path = "../img/$pathImg.png";
     
     //проверки
+    if ($mime != "png") {
+        echo "incorrect image extension";
+        echo "<br>";
+        exit();
+    }
     if(file_exists($uploadedFile))
     {
        echo "file uploaded to temp dir";
@@ -86,6 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 //возвращяю пользователя на гл.страницу
-header('Location: ../View/index.php');
+/* header('Location: ../View/index.php'); */
 
 ?>

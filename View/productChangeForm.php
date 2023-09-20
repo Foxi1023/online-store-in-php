@@ -3,7 +3,7 @@ include_once("Template/header.php");
 
 if(session_status() === PHP_SESSION_NONE) session_start();
 
-if (!$_SESSION["user"]) {
+if (!isset($_SESSION["user"])) {
     header('Location: ../View/index.php');
 }
 
