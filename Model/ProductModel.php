@@ -37,6 +37,17 @@ class ProductModel extends Mysql {
         $stmt->bind_param('sdssdii', $name, $price, $description, $rating, $count, $img, $id);
         $stmt->execute();
     }
+    public function changeProductQuantity($id, $count) {
+        // Подготовка SQL-запроса с использованием подстановочных параметров
+        $query = "UPDATE `product` 
+            SET 
+                `count` = ?
+            WHERE 
+                `id` = ?";
+        $stmt = $this->link->prepare($query);
+        $stmt->bind_param('ii', $count, $id);
+        $stmt->execute();
+    }
     
     // Получение товара по id
     public function getProductById($id) {
@@ -67,22 +78,6 @@ class ProductModel extends Mysql {
         $stmt->execute();
     }
 
-    public function getProductsById($ids) {
-        // Генерирование строку с запятыми для использования в операторе IN
-        $placeholders = implode(',', array_fill(0, count($ids), '?'));
-        
-        // Подготовка SQL-запроса с использованием подстановочных параметров
-        $query = "SELECT * FROM product WHERE id IN ($placeholders)";
-
-        $stmt = $this->link->prepare($query);
-    
-        // Привязывание значения параметров id к знакам вопроса в запросе
-        $stmt->bind_param(str_repeat('i', count($ids)), ...$ids);
-        
-        $stmt->execute();
-        $res = $stmt->get_result();
-        return $res;
-    }
 }
 
 ?>

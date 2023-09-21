@@ -31,20 +31,28 @@ class ProductController {
     }
 
     // Получение продукта по id
-    public function viewProduct($productId) {
-        $product = $this->model->getProductById($productId);
+    public function viewProduct($id) {
+        $product = $this->model->getProductById($id);
         $this->view->displayProducts($product);
     }
 
     // Получение продукта
-    public function viewProductsInCart($productId) {
-        $this->view->DisplayProductsInCart($productId);
+    public function viewProductsInCart($id) {
+        $this->view->DisplayProductsInCart($id);
     }
 
     // Получение продукта
-    public function viewProductPage($productId) {
-        $product = $this->model->getProductById($productId);
+    public function viewProductPage($id) {
+        $product = $this->model->getProductById($id);
         $this->view->DisplayProductPage($product);
+    }
+    public function getProduct($id) {
+        $product = $this->model->getProductById($id);
+        return $product;
+    }
+    
+    function changeProductQuantity($id, $count) {
+        $this->model->changeProductQuantity($id, $count);
     }
 }
 

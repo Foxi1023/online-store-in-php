@@ -23,15 +23,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'img' => $img
             ];
             
-            $_SESSION["allGoods"]+= $price * $count;
-
+            
             $index = array_search($id, array_column($_SESSION["goodsBasket"], 'id'));
             
             if ($index !== false) {
                 $count_old = $_SESSION["goodsBasket"][$index]["count"];
-                $product["count"] += $count_old;
-                $_SESSION["goodsBasket"][$index] = $product;
+                $total = $_POST["total"];
+
+/*                 echo "start";
+                echo "<br>";
+                var_dump($count_old);
+                echo "<br>";
+                var_dump($total);
+                echo "<br>";
+                echo "end"; */
+
+                if ($total > $count_old) {
+                    $product["count"] += $count_old;
+                    $_SESSION["goodsBasket"][$index] = $product;
+                    $_SESSION["allGoods"]+= $price * $count;
+                }
             } else {
+                $_SESSION["allGoods"]+= $price * $count;
                 $_SESSION["goodsBasket"][] = $product;
             }
         } else {
