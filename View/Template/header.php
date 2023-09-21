@@ -20,28 +20,54 @@
     <div class="container">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../View/index.php">Гл.Страница</a>
+                <a class="nav-link 
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "index.php") {
+                    echo "active";}
+                ?>" aria-current="page" href="../View/index.php">Гл.Страница</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../View/basketPage.php">Корзина</a>
+                <a class="nav-link 
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "basketPage.php") {
+                    echo "active";}
+                ?>" href="../View/basketPage.php">Корзина</a>
             </li>
 
             <?php if(session_status() === PHP_SESSION_NONE) session_start(); if (isset($_SESSION["user"])): ?>
 
             <li class="nav-item">
-                <a class="nav-link" href="../View/productRemovalForm.php">Удалить товар</a>
+                <a class="nav-link 
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "productRemovalForm.php") {
+                    echo "active";}
+                ?>" href="../View/productRemovalForm.php">Удалить товар</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../View/addingAProductForm.php">Добавить товар</a>
+                <a class="nav-link 
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "addingAProductForm.php") {
+                    echo "active";}
+                ?>" href="../View/addingAProductForm.php">Добавить товар</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../View/productChangeForm.php">Редактировать товар</a>
+                <a class="nav-link 
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "productChangeForm.php") {
+                    echo "active";}
+                ?>" href="../View/productChangeForm.php">Редактировать товар</a>
             </li>
 
             <?php endif; ?>
 
             <li class="nav-item">
-                <a class="nav-link" href=" <?php
+                <a class="nav-link
+                <?php
+                if (basename($_SERVER['REQUEST_URI']) == "loginForm.php" | 
+                    basename($_SERVER['REQUEST_URI']) == "registrationForm.php") {
+                    echo "active";}
+                ?>
+                " href=" <?php
                         if(session_status() === PHP_SESSION_NONE) session_start();
                         if (isset($_SESSION["user"])) {
                             echo "../Model/logout.php";
