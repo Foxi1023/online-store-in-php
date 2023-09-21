@@ -96,6 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 //возвращяю пользователя на гл.страницу
-/* header('Location: ../View/index.php'); */
+header('Location: ../View/index.php');
 
 ?>
