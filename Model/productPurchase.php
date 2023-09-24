@@ -32,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["allGoods"] = 0;
 }
 
-/* header('Location: ../View/basketPage.php'); */
+header('Location: ../View/basketPage.php');
 
 ?>
