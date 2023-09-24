@@ -5,7 +5,7 @@ include_once("Template/header.php") ?>
 <body>
     <form action="../Model/checkRegistration.php" method="post">
         <h2>Регистрация</h2>
-        <label for="login">Введите login: </label>
+        <label for="login">Введите email: </label>
         <input type="text" name="login" value="" required>
         <label for="password">Введите пароль: </label>
         <input type="text" name="password" value="" required>
