@@ -14,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //получаем значение
     if (file_exists($file4)) {
-        $pathImg = (int)file_get_contents($file4);
+        $nameImg = (int)file_get_contents($file4);
     } else {
-        $pathImg = 0;
+        $nameImg = 0;
     }
     //прибавляем значение на +1
-    $pathImg++;
+    $nameImg++;
     
 
-    file_put_contents($file4,$pathImg);
+    file_put_contents($file4,$nameImg);
     
     preg_match('/(.+)?\.(.+)?$/', $_FILES['uploadfile']['name'], $output); 
     $mime = $output[2];
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uploadedFile = $_FILES['uploadfile']['tmp_name'];
     
     //путь картинки и ее новое название
-    $path = "../img/$pathImg.png";
+    $path = "../img/$nameImg.png";
     
     //проверка на расширение изображения
     if ($mime == "png") {
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = $_POST["count"];
     
     //добавляем продукт
-    $controller->UpdateProduct($id, $name, $price, $description, $count, $pathImg);
+    $controller->UpdateProduct($id, $name, $price, $description, $count, $nameImg);
 }
 
 //возвращяю пользователя на гл.страницу
