@@ -65,24 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        exit();
     }
     
-/*     //тестирую введенные данные
-    echo $_FILES['uploadfile']['name'];
-    echo "<br>";
-    echo $_FILES['uploadfile']['tmp_name'];
-    echo "<br>";
-    echo "name ".$_POST["name"];
-    echo "<br>";
-    echo "description ".$_POST["description"];
-    echo "<br>";
-    echo "price ".$_POST["price"];
-    echo "<br>";
-    echo "count ".$_POST["count"];
-    echo "<br>";
-    echo "count = ".$count;
-    echo "<br>"; */
-    
-    
-    
     // Получение данных из формы
     $name = $_POST["name"];
     $description = $_POST["description"];

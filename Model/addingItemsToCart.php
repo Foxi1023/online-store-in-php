@@ -30,14 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $count_old = $_SESSION["goodsBasket"][$index]["count"];
                 $total = $_POST["total"];
 
-/*                 echo "start";
-                echo "<br>";
-                var_dump($count_old);
-                echo "<br>";
-                var_dump($total);
-                echo "<br>";
-                echo "end"; */
-
                 if ($total > $count_old) {
                     $product["count"] += $count_old;
                     $_SESSION["goodsBasket"][$index] = $product;
