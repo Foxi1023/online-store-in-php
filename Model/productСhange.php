@@ -35,32 +35,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //путь картинки и ее новое название
     $path = "../img/$pathImg.png";
     
-    //проверки
-    if ($mime != "png") {
-        echo "incorrect image extension";
+    //проверка на расширение изображения
+    if ($mime == "png") {
+        echo "Правильное расширение изображения";
+        echo "<br>";
+    } else {
+        echo "Неправильное расширение изображения";
         echo "<br>";
         exit();
     }
-    if(file_exists($uploadedFile))
-    {
-       echo "file uploaded to temp dir";
+    
+    if(file_exists($uploadedFile)) {
+       echo "файл загружен во временную директорию";
        echo "<br>";
-    }
-    else
-    {
-       echo "file upload failed";
+    } else {
+       echo "Загрузка файла не удалась";
        echo "<br>";
        exit();
     }
     
-    if(move_uploaded_file($uploadedFile, $path))
-    {
-       echo "upload complete";
+    if(move_uploaded_file($uploadedFile, $path)) {
+       echo "Загрузка завершена";
        echo "<br>";
-    }
-    else
-    {
-       echo "move_uploaded_file failed";
+    } else {
+       echo "move_uploaded_file не удалось";
        echo "<br>";
        exit();
     }
