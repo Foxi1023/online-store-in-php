@@ -21,13 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //прибавляем значение на +1
     $pathImg++;
     
-
     file_put_contents($file4,$pathImg);
     
     preg_match('/(.+)?\.(.+)?$/', $_FILES['uploadfile']['name'], $output); 
     $mime = $output[2];
-    echo $mime;
-    echo "<br>";
     
     //получаем картинку
     $uploadedFile = $_FILES['uploadfile']['tmp_name'];
